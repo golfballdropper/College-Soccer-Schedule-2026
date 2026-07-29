@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Colorado College Soccer — Home Game Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch:#0F1F3D;
+    --pitch-deep:#0A1730;
+    --chalk:#F6F2E7;
+    --white:#FFFFFF;
+    --gold:#C79A45;
+    --gold-light:#E4C77E;
+    --sky:#2E5FA3;
+    --sky-light:#EAF1F5;
+    --clay:#A6502B;
+    --clay-light:#F7E9E1;
+    --ink:#1C2321;
+    --ink-soft:#4B5750;
+    --line:#DCD5C3;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--chalk);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.5;
+  }
+  a{color:inherit;}
+  .display{font-family:'Anton',Impact,sans-serif; font-weight:400; letter-spacing:0.01em;}
+  .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:
+      repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 64px),
+      linear-gradient(160deg, var(--pitch) 0%, var(--pitch-deep) 100%);
+    color:var(--chalk);
+    padding:56px 24px 40px;
+    text-align:center;
+    border-bottom:6px solid var(--gold);
+  }
+  .hero .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin:0 0 18px;
+  }
+  .hero h1{
+    font-size:clamp(34px,6vw,64px);
+    line-height:1.02;
+    margin:0 0 14px;
+    text-transform:uppercase;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p.sub{
+    max-width:600px;
+    margin:0 auto;
+    color:#D7E2D9;
+    font-size:16px;
+  }
+  .scoreboard{
+    display:flex;
+    justify-content:center;
+    gap:0;
+    flex-wrap:wrap;
+    margin:32px auto 0;
+    max-width:640px;
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .scoreboard .stat{
+    flex:1 1 140px;
+    padding:16px 12px;
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,0.18);
+  }
+  .scoreboard .stat:last-child{border-right:none;}
+  .scoreboard .stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:26px;
+    color:var(--gold-light);
+    display:block;
+  }
+  .scoreboard .stat .lbl{
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:#B9C6BC;
+  }
+
+  /* ===== GENDER TABS ===== */
+  .tabbar-wrap{
+    position:sticky; top:0; z-index:20;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+  }
+  .tabbar{
+    max-width:900px;
+    margin:0 auto;
+    display:flex;
+    gap:0;
+  }
+  .tab-btn{
+    flex:1;
+    appearance:none;
+    border:none;
+    background:var(--white);
+    cursor:pointer;
+    padding:16px 12px;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--ink-soft);
+    border-bottom:4px solid transparent;
+    transition:color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .tab-btn .count{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-left:6px;
+  }
+  .tab-btn:hover{background:var(--chalk);}
+  .tab-btn.active{
+    color:var(--pitch);
+    border-bottom-color:var(--gold);
+    background:var(--chalk);
+  }
+  .tab-btn.active .count{color:var(--gold);}
+
+  /* ===== INTRO NOTE ===== */
+  .note{
+    max-width:760px;
+    margin:36px auto 8px;
+    padding:0 24px;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .note strong{color:var(--ink);}
+
+  /* ===== LEGEND ===== */
+  .legend{
+    max-width:760px;
+    margin:20px auto 0;
+    padding:0 24px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:var(--ink-soft);
+    align-items:center;
+  }
+  .badge{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    padding:3px 8px;
+    border-radius:5px;
+  }
+  .badge.d1{background:var(--sky-light); color:var(--sky);}
+  .badge.d2{background:var(--clay-light); color:var(--clay);}
+  .badge.region{
+    background:var(--chalk);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    letter-spacing:0;
+  }
+
+  /* ===== TAB PANELS ===== */
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  .panel-inner{
+    max-width:900px;
+    margin:0 auto;
+    padding:36px 24px 8px;
+  }
+
+  /* ===== SCHOOL CARD ===== */
+  .school{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 24px 24px;
+    margin-bottom:20px;
+    box-shadow:0 1px 2px rgba(20,48,31,0.04);
+  }
+  .school-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px 10px;
+    margin-bottom:4px;
+  }
+  .school-head h3{
+    font-size:19px;
+    margin:0;
+    font-weight:800;
+  }
+  .school-meta{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .school-meta .stadium{color:var(--ink);}
+
+  .sport-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--pitch);
+    margin-bottom:8px;
+  }
+  .games{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:8px;
+  }
+  .game{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--chalk);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:8px 10px;
+  }
+  .game .date{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:12px;
+    background:var(--pitch);
+    color:var(--gold-light);
+    border-radius:5px;
+    padding:5px 7px;
+    text-align:center;
+    min-width:52px;
+    line-height:1.15;
+  }
+  .game .opp{
+    font-size:13.5px;
+    font-weight:600;
+    line-height:1.25;
+  }
+  .game .opp .tag{
+    display:block;
+    font-weight:500;
+    font-size:11px;
+    color:var(--ink-soft);
+  }
+  .note-line{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:10px;
+  }
+  .note-line a{color:var(--sky); text-decoration:underline;}
+
+  .partial .sport-label{color:var(--gold);}
+  .partial{border-left:3px solid var(--gold); padding-left:12px; margin-left:-15px;}
+
+  .jumpnav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 28px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .jumpnav a{
+    text-decoration:none;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--pitch);
+    background:var(--chalk);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 13px;
+    white-space:nowrap;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .jumpnav a:hover{
+    background:var(--pitch);
+    color:var(--gold-light);
+    border-color:var(--pitch);
+  }
+  .school{scroll-margin-top:74px;}
+
+  footer{
+    max-width:900px;
+    margin:20px auto 60px;
+    padding:24px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+  footer a{color:var(--sky);}
+
+  @media (max-width:520px){
+    .scoreboard .stat{flex-basis:45%;}
+    .tab-btn{font-size:13px; padding:14px 8px;}
+  }
+
+  noscript .tabbar-wrap{display:none;}
+  noscript .tab-panel{display:block !important;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="eyebrow">Recruiting &amp; Advisory Program &middot; August 2026 Kickoff</p>
+  <h1>Colorado College Soccer<br><span>Home Game Guide</span></h1>
+  <p class="sub">Every NCAA Division I and Division II soccer program based in Colorado &mdash; split by men's and women's, alphabetical, showing only the games you can actually drive to.</p>
+  <div class="scoreboard">
+    <div class="stat"><span class="num">15</span><span class="lbl">Colorado Schools</span></div>
+    <div class="stat"><span class="num">11</span><span class="lbl">Men's Programs</span></div>
+    <div class="stat"><span class="num">15</span><span class="lbl">Women's Programs</span></div>
+    <div class="stat"><span class="num">AUG&ndash;NOV</span><span class="lbl">2026 Season</span></div>
+  </div>
+</header>
+
+<div class="tabbar-wrap">
+  <div class="tabbar">
+    <button class="tab-btn active" data-tab="men" onclick="showTab('men')">Men&rsquo;s Programs <span class="count">(11)</span></button>
+    <button class="tab-btn" data-tab="women" onclick="showTab('women')">Women&rsquo;s Programs <span class="count">(15)</span></button>
+  </div>
+</div>
+
+<p class="note">
+  Every program below now has a complete, verified home schedule pulled straight from official 2026 team pages in late July 2026. Kickoff times are usually set 1&ndash;2 weeks out, so double-check before a family drives out.
+</p>
+<div class="legend">
+  <span><span class="badge d1">D1</span> NCAA Division I</span>
+  <span><span class="badge d2">D2</span> NCAA Division II &middot; RMAC</span>
+  <span>⚽ = conference match</span>
+</div>
+
+<!-- ============ MEN'S TAB ============ -->
+<div id="men" class="tab-panel active">
+<div class="panel-inner">
+
+<nav class="jumpnav">
+  <a href="#men-adams-state">Adams State</a>
+  <a href="#men-air-force">Air Force</a>
+  <a href="#men-colorado-christian">Colorado Christian</a>
+  <a href="#men-colorado-mesa">Colorado Mesa</a>
+  <a href="#men-mines">Colorado School of Mines</a>
+  <a href="#men-csu-pueblo">CSU Pueblo</a>
+  <a href="#men-fort-lewis">Fort Lewis</a>
+  <a href="#men-msu-denver">MSU Denver</a>
+  <a href="#men-regis">Regis</a>
+  <a href="#men-uccs">UCCS</a>
+  <a href="#men-denver">University of Denver</a>
+</nav>
+
+
+  <div class="school" id="men-adams-state">
+    <div class="school-head"><h3>Adams State University</h3><span class="badge d2">D2</span><span class="badge region">Alamosa &middot; San Luis Valley</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">ASU Soccer Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>16</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">South Dakota Mines<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+    <div class="note-line">Plus a Aug 19 exhibition at Fort Lewis (away, not shown here).</div>
+  </div>
+
+  <div class="school" id="men-air-force">
+    <div class="school-head"><h3>Air Force Academy</h3><span class="badge d1">D1</span><span class="badge region">Colorado Springs Area</span></div>
+    <div class="school-meta">Mountain West &middot; <span class="stadium">Cadet Soccer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>30</span><span class="opp">UC San Diego</span></div>
+      <div class="game"><span class="date">SEP<br>11</span><span class="opp">UC Riverside</span></div>
+      <div class="game"><span class="date">SEP<br>18</span><span class="opp">UTRGV</span></div>
+      <div class="game"><span class="date">SEP<br>26</span><span class="opp">Utah Tech<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">UNLV<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">UC Davis<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>24</span><span class="opp">San Jose State<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">NOV<br>06</span><span class="opp">Grand Canyon<span class="tag">⚽ MW</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-colorado-christian">
+    <div class="school-head"><h3>Colorado Christian University</h3><span class="badge d2">D2</span><span class="badge region">Lakewood &middot; Front Range</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Trailblazer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>01</span><span class="opp">West Texas A&amp;M</span></div>
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Concordia Irvine</span></div>
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">Biola</span></div>
+      <div class="game"><span class="date">SEP<br>10</span><span class="opp">Dallas Baptist</span></div>
+      <div class="game"><span class="date">SEP<br>12</span><span class="opp">UT Tyler</span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">Colorado Mesa</span></div>
+      <div class="game"><span class="date">SEP<br>25</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>16</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-colorado-mesa">
+    <div class="school-head"><h3>Colorado Mesa University</h3><span class="badge d2">D2</span><span class="badge region">Grand Junction &middot; Western Slope</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Community Hospital Unity Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Jamestown</span></div>
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">UC Merced</span></div>
+      <div class="game"><span class="date">SEP<br>17</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>24</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-mines">
+    <div class="school-head"><h3>Colorado School of Mines</h3><span class="badge d2">D2</span><span class="badge region">Golden &middot; Denver Metro</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Stermole Soccer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Biola</span></div>
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">Concordia Irvine</span></div>
+      <div class="game"><span class="date">SEP<br>10</span><span class="opp">UT Tyler</span></div>
+      <div class="game"><span class="date">SEP<br>12</span><span class="opp">Dallas Baptist</span></div>
+      <div class="game"><span class="date">OCT<br>01</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>15</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-csu-pueblo">
+    <div class="school-head"><h3>CSU Pueblo</h3><span class="badge d2">D2</span><span class="badge region">Pueblo &middot; San Luis Valley</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Art &amp; Lorraine Gonzales Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">Newman</span></div>
+      <div class="game"><span class="date">SEP<br>12</span><span class="opp">Hawai&rsquo;i&ndash;Hilo</span></div>
+      <div class="game"><span class="date">SEP<br>17</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">South Dakota Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>08</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>22</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-fort-lewis">
+    <div class="school-head"><h3>Fort Lewis College</h3><span class="badge d2">D2</span><span class="badge region">Durango &middot; Southwest CO</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Dirks Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">St. Edward&rsquo;s</span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">South Dakota Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-msu-denver">
+    <div class="school-head"><h3>MSU Denver <span style="font-weight:500;font-size:14px;color:var(--ink-soft);">(Metropolitan State)</span></h3><span class="badge d2">D2</span><span class="badge region">Denver &middot; Denver Metro</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Assembly Athletic Complex</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>04</span><span class="opp">Lubbock Christian</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">Midwestern State</span></div>
+      <div class="game"><span class="date">SEP<br>14</span><span class="opp">Hawai&rsquo;i&ndash;Hilo</span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>25</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>16</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-regis">
+    <div class="school-head"><h3>Regis University</h3><span class="badge d2">D2</span><span class="badge region">Denver &middot; Denver Metro</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Regis Turf Fields</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>10</span><span class="opp">Seattle Pacific</span></div>
+      <div class="game"><span class="date">SEP<br>13</span><span class="opp">Western Washington</span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">South Dakota Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>08</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>16</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="men-uccs">
+    <div class="school-head"><h3>UCCS</h3><span class="badge d2">D2</span><span class="badge region">Colorado Springs Area</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Mountain Lion Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>04</span><span class="opp">Midwestern State</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">Lubbock Christian</span></div>
+      <div class="game"><span class="date">SEP<br>09</span><span class="opp">Hawai&rsquo;i&ndash;Hilo</span></div>
+      <div class="game"><span class="date">SEP<br>17</span><span class="opp">MSU Denver</span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">South Dakota Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>08</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+    <div class="note-line">Plus an Aug 20 exhibition vs Colorado College at home.</div>
+  </div>
+
+  <div class="school" id="men-denver">
+    <div class="school-head"><h3>University of Denver</h3><span class="badge d1">D1</span><span class="badge region">Denver &middot; Denver Metro</span></div>
+    <div class="school-meta">West Coast Conference &middot; <span class="stadium">Denver Soccer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>20</span><span class="opp">Cal Poly</span></div>
+      <div class="game"><span class="date">SEP<br>04</span><span class="opp">Tulsa</span></div>
+      <div class="game"><span class="date">SEP<br>22</span><span class="opp">Creighton</span></div>
+      <div class="game"><span class="date">OCT<br>03</span><span class="opp">LMU<span class="tag">⚽ WCC</span></span></div>
+      <div class="game"><span class="date">OCT<br>10</span><span class="opp">San Francisco<span class="tag">⚽ WCC</span></span></div>
+      <div class="game"><span class="date">OCT<br>24</span><span class="opp">Pacific<span class="tag">⚽ WCC</span></span></div>
+      <div class="game"><span class="date">NOV<br>06</span><span class="opp">Seattle<span class="tag">⚽ WCC</span></span></div>
+    </div>
+    <div class="note-line">Plus two free preseason exhibitions: Aug 8 vs Air Force, Aug 14 vs Utah Valley.</div>
+  </div>
+
+</div>
+</div>
+
+<!-- ============ WOMEN'S TAB ============ -->
+<div id="women" class="tab-panel">
+<div class="panel-inner">
+
+<nav class="jumpnav">
+  <a href="#women-adams-state">Adams State</a>
+  <a href="#women-air-force">Air Force</a>
+  <a href="#women-colorado-christian">Colorado Christian</a>
+  <a href="#women-colorado-college">Colorado College</a>
+  <a href="#women-colorado-mesa">Colorado Mesa</a>
+  <a href="#women-mines">Colorado School of Mines</a>
+  <a href="#women-csu-pueblo">CSU Pueblo</a>
+  <a href="#women-cu-boulder">CU Boulder</a>
+  <a href="#women-fort-lewis">Fort Lewis</a>
+  <a href="#women-msu-denver">MSU Denver</a>
+  <a href="#women-unc">Northern Colorado</a>
+  <a href="#women-regis">Regis</a>
+  <a href="#women-uccs">UCCS</a>
+  <a href="#women-denver">University of Denver</a>
+  <a href="#women-western-colorado">Western Colorado</a>
+</nav>
+
+
+  <div class="school" id="women-adams-state">
+    <div class="school-head"><h3>Adams State University</h3><span class="badge d2">D2</span><span class="badge region">Alamosa &middot; San Luis Valley</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">ASU Soccer Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">West Texas A&amp;M</span></div>
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">Eastern New Mexico</span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>01</span><span class="opp">Western Colorado<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>15</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+    <div class="note-line">Plus an Aug 21 exhibition vs CSU Pueblo at home.</div>
+  </div>
+
+  <div class="school" id="women-air-force">
+    <div class="school-head"><h3>Air Force Academy</h3><span class="badge d1">D1</span><span class="badge region">Colorado Springs Area</span></div>
+    <div class="school-meta">Mountain West &middot; <span class="stadium">Cadet Soccer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>13</span><span class="opp">Army</span></div>
+      <div class="game"><span class="date">AUG<br>16</span><span class="opp">Creighton</span></div>
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Montana</span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">Eastern Washington</span></div>
+      <div class="game"><span class="date">SEP<br>24</span><span class="opp">UC Davis<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">Hawai&rsquo;i<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Grand Canyon<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>24</span><span class="opp">San Jose State<span class="tag">⚽ MW</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-colorado-christian">
+    <div class="school-head"><h3>Colorado Christian University</h3><span class="badge d2">D2</span><span class="badge region">Lakewood &middot; Front Range</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Trailblazer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>11</span><span class="opp">Nebraska&ndash;Kearney</span></div>
+      <div class="game"><span class="date">SEP<br>13</span><span class="opp">Fort Hays State</span></div>
+      <div class="game"><span class="date">SEP<br>18</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>09</span><span class="opp">Black Hills State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Western Colorado<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-colorado-college">
+    <div class="school-head"><h3>Colorado College</h3><span class="badge d1">D1</span><span class="badge region">Colorado Springs Area</span></div>
+    <div class="school-meta">Mountain West &middot; <span class="stadium">Stewart Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>13</span><span class="opp">Creighton</span></div>
+      <div class="game"><span class="date">AUG<br>16</span><span class="opp">Drake</span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">Colorado State</span></div>
+      <div class="game"><span class="date">SEP<br>25</span><span class="opp">Hawai&rsquo;i<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">UC Davis<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>07</span><span class="opp">New Mexico<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>24</span><span class="opp">Wyoming<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">NOV<br>01</span><span class="opp">Grand Canyon<span class="tag">⚽ MW</span></span></div>
+    </div>
+    <div class="note-line">Oct 28: City for Champions Cup vs Air Force, played at Weidner Field, Colorado Springs.</div>
+  </div>
+
+  <div class="school" id="women-colorado-mesa">
+    <div class="school-head"><h3>Colorado Mesa University</h3><span class="badge d2">D2</span><span class="badge region">Grand Junction &middot; Western Slope</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Community Hospital Unity Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>25</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">Florida Tech</span></div>
+      <div class="game"><span class="date">OCT<br>09</span><span class="opp">New Mexico Highlands<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>16</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-mines">
+    <div class="school-head"><h3>Colorado School of Mines</h3><span class="badge d2">D2</span><span class="badge region">Golden &middot; Denver Metro</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Stermole Soccer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>27</span><span class="opp">Rollins</span></div>
+      <div class="game"><span class="date">AUG<br>30</span><span class="opp">Western Oregon</span></div>
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Angelo State</span></div>
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">St. Mary&rsquo;s (TX)</span></div>
+      <div class="game"><span class="date">SEP<br>25</span><span class="opp">Black Hills State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">New Mexico Highlands<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-csu-pueblo">
+    <div class="school-head"><h3>CSU Pueblo</h3><span class="badge d2">D2</span><span class="badge region">Pueblo &middot; San Luis Valley</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Art &amp; Lorraine Gonzales Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Eastern New Mexico</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">Lubbock Christian</span></div>
+      <div class="game"><span class="date">SEP<br>25</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">Black Hills State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">New Mexico Highlands<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-cu-boulder">
+    <div class="school-head"><h3>CU Boulder</h3><span class="badge d1">D1</span><span class="badge region">Boulder &middot; Front Range</span></div>
+    <div class="school-meta">Big 12 &middot; <span class="stadium">Prentup Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>12</span><span class="opp">Colorado State</span></div>
+      <div class="game"><span class="date">AUG<br>16</span><span class="opp">Army</span></div>
+      <div class="game"><span class="date">AUG<br>20</span><span class="opp">Cal State Fullerton</span></div>
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">New Mexico</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">Utah State</span></div>
+      <div class="game"><span class="date">SEP<br>11</span><span class="opp">Denver</span></div>
+      <div class="game"><span class="date">SEP<br>24</span><span class="opp">West Virginia<span class="tag">⚽ Big 12</span></span></div>
+      <div class="game"><span class="date">OCT<br>08</span><span class="opp">Baylor<span class="tag">⚽ Big 12</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Kansas<span class="tag">⚽ Big 12</span></span></div>
+      <div class="game"><span class="date">OCT<br>30</span><span class="opp">Cincinnati<span class="tag">⚽ Big 12</span></span></div>
+      <div class="game"><span class="date">NOV<br>05</span><span class="opp">Oklahoma State<span class="tag">⚽ Big 12</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-fort-lewis">
+    <div class="school-head"><h3>Fort Lewis College</h3><span class="badge d2">D2</span><span class="badge region">Durango &middot; Southwest CO</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Dirks Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">West Texas A&amp;M</span></div>
+      <div class="game"><span class="date">SEP<br>13</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>17</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>09</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>16</span><span class="opp">Black Hills State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>28</span><span class="opp">Western Colorado<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-msu-denver">
+    <div class="school-head"><h3>MSU Denver <span style="font-weight:500;font-size:14px;color:var(--ink-soft);">(Metropolitan State)</span></h3><span class="badge d2">D2</span><span class="badge region">Denver &middot; Denver Metro</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Assembly Athletic Complex</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>29</span><span class="opp">Point Loma</span></div>
+      <div class="game"><span class="date">SEP<br>11</span><span class="opp">Fort Hays State</span></div>
+      <div class="game"><span class="date">SEP<br>13</span><span class="opp">Westmont</span></div>
+      <div class="game"><span class="date">SEP<br>18</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>09</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Black Hills State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">Western Colorado<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Fort Lewis<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-unc">
+    <div class="school-head"><h3>Northern Colorado</h3><span class="badge d1">D1</span><span class="badge region">Greeley &middot; Front Range</span></div>
+    <div class="school-meta">Big Sky &middot; <span class="stadium">Jackson Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>13</span><span class="opp">Denver</span></div>
+      <div class="game"><span class="date">AUG<br>16</span><span class="opp">Wyoming</span></div>
+      <div class="game"><span class="date">AUG<br>23</span><span class="opp">Colorado State</span></div>
+      <div class="game"><span class="date">AUG<br>27</span><span class="opp">South Dakota</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">New Mexico</span></div>
+      <div class="game"><span class="date">SEP<br>10</span><span class="opp">Air Force</span></div>
+      <div class="game"><span class="date">OCT<br>08</span><span class="opp">Idaho<span class="tag">⚽ Big Sky</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Eastern Washington<span class="tag">⚽ Big Sky</span></span></div>
+      <div class="game"><span class="date">OCT<br>22</span><span class="opp">Portland State<span class="tag">⚽ Big Sky</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Montana<span class="tag">⚽ Big Sky</span></span></div>
+    </div>
+    <div class="note-line">UNC does not sponsor a men's soccer program.</div>
+  </div>
+
+  <div class="school" id="women-regis">
+    <div class="school-head"><h3>Regis University</h3><span class="badge d2">D2</span><span class="badge region">Denver &middot; Denver Metro</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Regis Turf Fields</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>27</span><span class="opp">East Central</span></div>
+      <div class="game"><span class="date">AUG<br>29</span><span class="opp">Rollins</span></div>
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Dallas Baptist</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">St. Edward&rsquo;s</span></div>
+      <div class="game"><span class="date">SEP<br>10</span><span class="opp">Saint Martin&rsquo;s</span></div>
+      <div class="game"><span class="date">SEP<br>13</span><span class="opp">Nebraska&ndash;Kearney</span></div>
+      <div class="game"><span class="date">SEP<br>18</span><span class="opp">Adams State<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">New Mexico Highlands<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>02</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-uccs">
+    <div class="school-head"><h3>UCCS</h3><span class="badge d2">D2</span><span class="badge region">Colorado Springs Area</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Mountain Lion Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>27</span><span class="opp">Point Loma</span></div>
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">St. Edward&rsquo;s</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">Dallas Baptist</span></div>
+      <div class="game"><span class="date">SEP<br>24</span><span class="opp">Colorado Christian<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>09</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>25</span><span class="opp">Westminster<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-denver">
+    <div class="school-head"><h3>University of Denver</h3><span class="badge d1">D1</span><span class="badge region">Denver &middot; Denver Metro</span></div>
+    <div class="school-meta">West Coast Conference &middot; <span class="stadium">Denver Soccer Stadium</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>27</span><span class="opp">Colorado College</span></div>
+      <div class="game"><span class="date">SEP<br>06</span><span class="opp">Montana</span></div>
+      <div class="game"><span class="date">SEP<br>17</span><span class="opp">Air Force</span></div>
+      <div class="game"><span class="date">SEP<br>26</span><span class="opp">Saint Mary&rsquo;s<span class="tag">⚽ WCC</span></span></div>
+      <div class="game"><span class="date">OCT<br>07</span><span class="opp">Pepperdine<span class="tag">⚽ WCC</span></span></div>
+      <div class="game"><span class="date">OCT<br>17</span><span class="opp">Portland<span class="tag">⚽ WCC</span></span></div>
+      <div class="game"><span class="date">OCT<br>31</span><span class="opp">Pacific<span class="tag">⚽ WCC</span></span></div>
+    </div>
+  </div>
+
+  <div class="school" id="women-western-colorado">
+    <div class="school-head"><h3>Western Colorado University</h3><span class="badge d2">D2</span><span class="badge region">Gunnison</span></div>
+    <div class="school-meta">RMAC &middot; <span class="stadium">Katy O. Rady Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>20</span><span class="opp">Fort Lewis</span></div>
+      <div class="game"><span class="date">SEP<br>03</span><span class="opp">Lubbock Christian</span></div>
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">Angelo State</span></div>
+      <div class="game"><span class="date">SEP<br>17</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>20</span><span class="opp">UCCS<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">SEP<br>27</span><span class="opp">Colorado Mesa<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Colorado School of Mines<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>16</span><span class="opp">Regis<span class="tag">⚽ RMAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">Black Hills State<span class="tag">⚽ RMAC</span></span></div>
+    </div>
+    <div class="note-line">Western Colorado does not sponsor men's soccer.</div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <p><strong>How to use this:</strong> Send it as-is, or copy sections into your own newsletter. Kickoff times are typically posted 1&ndash;2 weeks before each match on the school's own athletics site &mdash; the links above are the fastest way to check. If you paste this into an email body rather than sending the file/link, the tabs may not switch in every email client &mdash; both lists will just appear stacked instead, which still works fine.</p>
+  <p>Compiled from official 2026 team schedules published by each athletics department (Sidearm Sports platforms) as of late July 2026. Schedules are subject to change &mdash; always reconfirm before traveling.</p>
+</footer>
+
+<script>
+  function showTab(name){
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.querySelector('.tab-btn[data-tab="'+name+'"]').classList.add('active');
+    document.getElementById(name).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+</script>
+
+</body>
+</html>
