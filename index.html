@@ -172,6 +172,7 @@
   }
   .badge.d1{background:var(--sky-light); color:var(--sky);}
   .badge.d2{background:var(--clay-light); color:var(--clay);}
+  .badge.d3{background:#EFE7F5; color:#6B4E8E;}
   .badge.region{
     background:var(--chalk);
     border:1px solid var(--line);
@@ -326,19 +327,19 @@
 <header class="hero">
   <p class="eyebrow">Recruiting &amp; Advisory Program &middot; August 2026 Kickoff</p>
   <h1>Colorado College Soccer<br><span>Home Game Guide</span></h1>
-  <p class="sub">Every NCAA Division I and Division II soccer program based in Colorado &mdash; split by men's and women's, alphabetical, showing only the games you can actually drive to.</p>
+  <p class="sub">Every NCAA Division I and Division II soccer program based in Colorado &mdash; split by men's and women's, alphabetical, showing only the games you can actually drive to. Wyoming's women's team and Colorado College's D3 men's team are included too, flagged where they differ from the D1/D2 core list.</p>
   <div class="scoreboard">
-    <div class="stat"><span class="num">15</span><span class="lbl">Colorado Schools</span></div>
-    <div class="stat"><span class="num">11</span><span class="lbl">Men's Programs</span></div>
-    <div class="stat"><span class="num">15</span><span class="lbl">Women's Programs</span></div>
+    <div class="stat"><span class="num">16</span><span class="lbl">Colorado Schools</span></div>
+    <div class="stat"><span class="num">12</span><span class="lbl">Men's Programs</span></div>
+    <div class="stat"><span class="num">17</span><span class="lbl">Women's Programs</span></div>
     <div class="stat"><span class="num">AUG&ndash;NOV</span><span class="lbl">2026 Season</span></div>
   </div>
 </header>
 
 <div class="tabbar-wrap">
   <div class="tabbar">
-    <button class="tab-btn active" data-tab="men" onclick="showTab('men')">Men&rsquo;s Programs <span class="count">(11)</span></button>
-    <button class="tab-btn" data-tab="women" onclick="showTab('women')">Women&rsquo;s Programs <span class="count">(15)</span></button>
+    <button class="tab-btn active" data-tab="men" onclick="showTab('men')">Men&rsquo;s Programs <span class="count">(12)</span></button>
+    <button class="tab-btn" data-tab="women" onclick="showTab('women')">Women&rsquo;s Programs <span class="count">(17)</span></button>
   </div>
 </div>
 
@@ -348,6 +349,7 @@
 <div class="legend">
   <span><span class="badge d1">D1</span> NCAA Division I</span>
   <span><span class="badge d2">D2</span> NCAA Division II &middot; RMAC</span>
+  <span><span class="badge d3">D3</span> NCAA Division III</span>
   <span>⚽ = conference match</span>
 </div>
 
@@ -359,6 +361,7 @@
   <a href="#men-adams-state">Adams State</a>
   <a href="#men-air-force">Air Force</a>
   <a href="#men-colorado-christian">Colorado Christian</a>
+  <a href="#men-colorado-college">Colorado College</a>
   <a href="#men-colorado-mesa">Colorado Mesa</a>
   <a href="#men-mines">Colorado School of Mines</a>
   <a href="#men-csu-pueblo">CSU Pueblo</a>
@@ -418,6 +421,22 @@
       <div class="game"><span class="date">OCT<br>18</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
       <div class="game"><span class="date">OCT<br>28</span><span class="opp">MSU Denver<span class="tag">⚽ RMAC</span></span></div>
     </div>
+  </div>
+
+  <div class="school" id="men-colorado-college">
+    <div class="school-head"><h3>Colorado College</h3><span class="badge d3">D3</span><span class="badge region">Colorado Springs Area</span></div>
+    <div class="school-meta">SCAC &middot; <span class="stadium">Stewart Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">SEP<br>04</span><span class="opp">Whitworth</span></div>
+      <div class="game"><span class="date">SEP<br>05</span><span class="opp">Wheaton</span></div>
+      <div class="game"><span class="date">OCT<br>09</span><span class="opp">Univ. of St. Thomas<span class="tag">⚽ SCAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>11</span><span class="opp">Centenary<span class="tag">⚽ SCAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>16</span><span class="opp">LeTourneau<span class="tag">⚽ SCAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">Austin College<span class="tag">⚽ SCAC</span></span></div>
+      <div class="game"><span class="date">OCT<br>23</span><span class="opp">Univ. of Dallas<span class="tag">⚽ SCAC</span></span></div>
+    </div>
+    <div class="note-line">Plus an Aug 23 exhibition vs MSU Denver at home. This is the one Division III program in the guide &mdash; everything else here is D1 or D2.</div>
   </div>
 
   <div class="school" id="men-colorado-mesa">
@@ -564,6 +583,7 @@
   <a href="#women-colorado-college">Colorado College</a>
   <a href="#women-colorado-mesa">Colorado Mesa</a>
   <a href="#women-mines">Colorado School of Mines</a>
+  <a href="#women-colorado-state">Colorado State</a>
   <a href="#women-csu-pueblo">CSU Pueblo</a>
   <a href="#women-cu-boulder">CU Boulder</a>
   <a href="#women-fort-lewis">Fort Lewis</a>
@@ -573,6 +593,7 @@
   <a href="#women-uccs">UCCS</a>
   <a href="#women-denver">University of Denver</a>
   <a href="#women-western-colorado">Western Colorado</a>
+  <a href="#women-wyoming">Wyoming</a>
 </nav>
 
 
@@ -673,6 +694,23 @@
       <div class="game"><span class="date">OCT<br>23</span><span class="opp">New Mexico Highlands<span class="tag">⚽ RMAC</span></span></div>
       <div class="game"><span class="date">OCT<br>28</span><span class="opp">CSU Pueblo<span class="tag">⚽ RMAC</span></span></div>
     </div>
+  </div>
+
+  <div class="school" id="women-colorado-state">
+    <div class="school-head"><h3>Colorado State University</h3><span class="badge d1">D1</span><span class="badge region">Fort Collins &middot; Front Range</span></div>
+    <div class="school-meta">Pac-12 (inaugural season) &middot; <span class="stadium">CSU Soccer Field</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>16</span><span class="opp">Denver</span></div>
+      <div class="game"><span class="date">AUG<br>30</span><span class="opp">South Carolina</span></div>
+      <div class="game"><span class="date">SEP<br>10</span><span class="opp">Kansas State</span></div>
+      <div class="game"><span class="date">SEP<br>17</span><span class="opp">Wyoming</span></div>
+      <div class="game"><span class="date">OCT<br>04</span><span class="opp">Utah State<span class="tag">⚽ Pac-12</span></span></div>
+      <div class="game"><span class="date">OCT<br>08</span><span class="opp">Gonzaga<span class="tag">⚽ Pac-12</span></span></div>
+      <div class="game"><span class="date">OCT<br>22</span><span class="opp">Boise State<span class="tag">⚽ Pac-12</span></span></div>
+      <div class="game"><span class="date">OCT<br>31</span><span class="opp">Washington State<span class="tag">⚽ Pac-12</span></span></div>
+    </div>
+    <div class="note-line">Plus an Aug 5 exhibition vs Nebraska at home. This is CSU's first season in the Pac-12. Men's soccer isn't sponsored at CSU.</div>
   </div>
 
   <div class="school" id="women-csu-pueblo">
@@ -830,6 +868,24 @@
       <div class="game"><span class="date">OCT<br>18</span><span class="opp">Black Hills State<span class="tag">⚽ RMAC</span></span></div>
     </div>
     <div class="note-line">Western Colorado does not sponsor men's soccer.</div>
+  </div>
+
+  <div class="school" id="women-wyoming">
+    <div class="school-head"><h3>University of Wyoming</h3><span class="badge d1">D1</span><span class="badge region">Laramie, WY &middot; just over the border</span></div>
+    <div class="school-meta">Mountain West &middot; <span class="stadium">War Memorial Stadium Complex</span></div>
+    <div class="sport-label">Home</div>
+    <div class="games">
+      <div class="game"><span class="date">AUG<br>13</span><span class="opp">Drake</span></div>
+      <div class="game"><span class="date">AUG<br>20</span><span class="opp">Weber State</span></div>
+      <div class="game"><span class="date">AUG<br>27</span><span class="opp">South Carolina</span></div>
+      <div class="game"><span class="date">AUG<br>30</span><span class="opp">South Dakota</span></div>
+      <div class="game"><span class="date">OCT<br>07</span><span class="opp">San Jose State<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>15</span><span class="opp">New Mexico<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">OCT<br>18</span><span class="opp">UTEP<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">NOV<br>01</span><span class="opp">Air Force<span class="tag">⚽ MW</span></span></div>
+      <div class="game"><span class="date">NOV<br>07</span><span class="opp">Hawai&rsquo;i<span class="tag">⚽ MW</span></span></div>
+    </div>
+    <div class="note-line">Plus an Aug 9 exhibition vs Denver at home. Laramie is about 50 minutes north of Fort Collins &mdash; the only out-of-state program in this guide, included because it's an easy drive for northern Front Range families. Wyoming does not sponsor men's soccer.</div>
   </div>
 
 </div>
